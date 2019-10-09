@@ -2,6 +2,7 @@ class Comment < ApplicationRecord
   before_save :ensure_single_thread, if: :parent
 
   belongs_to :user
+  belongs_to :article
   belongs_to :parent, optional: true, class_name: 'Comment'
 
   def replies

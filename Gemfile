@@ -38,6 +38,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jsonapi-rails', '~> 0.4.0'
 
+gem 'rabl', '~> 0.13.1'
+
+gem 'oj', '~> 3.6.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
