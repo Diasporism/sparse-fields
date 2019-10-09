@@ -14,6 +14,6 @@ class Api::V1::ArticlesController < ApplicationController
 
   def show
     article = Article.find(params[:id])
-    render jsonapi: article
+    render jsonapi: article, fields: requested_fields_for(article), include: requested_include_for(article)
   end
 end
