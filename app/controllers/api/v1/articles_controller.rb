@@ -11,4 +11,9 @@ class Api::V1::ArticlesController < ApplicationController
   def destroy
     # Just pretend I wrote code here or something
   end
+
+  def show
+    article = Article.find(params[:id])
+    render jsonapi: article
+  end
 end
