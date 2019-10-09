@@ -5,6 +5,14 @@ class Comment < ApplicationRecord
   belongs_to :article
   belongs_to :parent, optional: true, class_name: 'Comment'
 
+  def self.default_api_fields
+    { comments: [:note, :parent_id, :user_id] }
+  end
+
+  def self.default_api_include
+    []
+  end
+
   def replies
     Comment.where(parent_id: self.id)
   end
